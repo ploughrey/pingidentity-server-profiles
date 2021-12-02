@@ -721,7 +721,7 @@
         </Logger>
 
         <!--Third-party dependencies-->
-        <AsyncLogger name="com.netflix" level="WARN" additivity="false" includeLocation="false">
+        <AsyncLogger name="com.netflix" level="ERROR" additivity="false" includeLocation="false">
             <AppenderRef ref="File"/>
         </AsyncLogger>
         <AsyncLogger name="com.netflix.config.sources.URLConfigurationSource" level="FATAL" additivity="false"
