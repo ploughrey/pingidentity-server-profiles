@@ -8,13 +8,13 @@
 #   If NOT Found, then we are STARTing for the first time
 #   If Found,     then we are RESTARTing
 #
-#if test -z "${PF_ENGINE_BASE_URL}"; then
-#  PF_ENGINE_BASE_URL="${PF_ENGINE_PUBLIC_HOSTNAME}:${PF_ENGINE_PUBLIC_PORT_HTTPS}"
-#  PF_ENGINE_BASE_URL="${PF_ENGINE_BASE_URL%%:443}"
-# changing default env vars to new vars for BASE URL VIP Hostname
 if test -z "${PF_ENGINE_BASE_URL}"; then
-  PF_ENGINE_BASE_URL="${PF_ENGINE_VIP}:${PF_ENGINE_VIP_PORT}"
+  PF_ENGINE_BASE_URL="${PF_ENGINE_PUBLIC_HOSTNAME}:${PF_ENGINE_PUBLIC_PORT_HTTPS}"
   PF_ENGINE_BASE_URL="${PF_ENGINE_BASE_URL%%:443}"
+# changing default env vars to new vars for BASE URL VIP Hostname
+#if test -z "${PF_ENGINE_BASE_URL}"; then
+#  PF_ENGINE_BASE_URL="${PF_ENGINE_VIP}:${PF_ENGINE_VIP_PORT}"
+#  PF_ENGINE_BASE_URL="${PF_ENGINE_BASE_URL%%:443}"
 fi
 if test -z "${PD_DELEGATOR_URL}"; then
   PD_DELEGATOR_URL="${PD_DELEGATOR_PUBLIC_HOSTNAME}:${PD_DELEGATOR_PUBLIC_PORT_HTTPS}"
